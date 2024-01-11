@@ -6,9 +6,8 @@ Inclusive ReactNative app that demonstrate using geolocation-service along with 
 
 - [1. Introduction](#1-introduction)
 - [2. Installation](#2-installation)
-- [3. Gradle 7 support](#3-gradle7-support)
-- [4. Configuration](#4-configuration)
-- [5. Unlicensed](#5-unlicensed)
+- [3. Configuration](#3-configuration)
+- [4. License](#4-license)
 
 ## 1. Introduction
 
@@ -26,46 +25,22 @@ The demo uses the `Platfom` class to determine if the device is IOS or Android, 
 
 This app should work out of the box, just clone the repository then run these commands:
 
-- install packages
+1. install packages
 
 ```bash
 npm i
 ```
 
-- Run the app
+2. Run the app
 
 ```bash
 npm run android
 ```
 
-## 3. Gradle7 support
-
-This project's Gradle version have been updated to version 7, which is not compatible with old gradle scripts from `@hmscore` libraries. Therefore patches have been included in `patches/` to fix gradle compilation errors cauzed mainly by unsupported `maven` plugin.
-The patches will apply automatically everytime you install `node_modules`, aka after every `npm install`.
-
-How to make your Gradle project compatible with `@hmscore` availability and location libraries:
-
-1. install `patch-package` and `postinstall-postinstall` libraries using command: `npm i --save-dev patch-package postinstall-postinstall`
-2. copy `@hmscore` patches from `patches/` to your projects root directory under folder named `patches/`, patch files are:
-   1. `patches/@hmscore+react-native-hms-availability+5.2.0-300.patch`: patch file will fix the Gradle7 missing 'maven' plugin issue caused by availability libray
-   2. `patches/@hmscore+react-native-hms-location+6.4.0-300.patch`: patch file will fix Gradle7 missing 'maven' plugin issue caused by location library
-   3. `patches/@react-native-community+cli-platform-android+2.9.0.patch`: this patch file can be skipped, as it fixes the issue of old react-native cli and Gradle 7, that you most probably are not facing if you're using newer version of react-native
-3. Add `postinstall` script to your `package.json` to automatically apply the patches:
-
-```js
-"scripts": {
- "postinstall": "patch-package"
- }
-```
-
-Done, run `npm i` to apply the patches, then run the app.
-
-> Note: the above steps have already been applied to this project
-
-## 4. Configuration
+## 3. Configuration
 
 NO
 
-## 5. Unlicensed
+## 4. License
 
 [The Unlicense](https://github.com/megaacheyounes/rn-geolocation-inclusive/blob/master/UNLICENSE)
